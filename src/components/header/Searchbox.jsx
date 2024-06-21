@@ -2,12 +2,12 @@ import React from "react";
 
 function Searchbox() {
   return (
-    <section className="container mt-12 text-slate-300">
+    <section className="container mt-12 text-slate-200">
       <div className="relative">
         <input
           type="text"
           placeholder="Search for a movie, TV Show or celebrity that you are looking for"
-          className="w-full bg-slate-600 text-xl p-3 border-2 border-slate-900 rounded-md outline-none"
+          className="w-full bg-slate-600 placeholder:text-slate-500 placeholder:text-base text-xl p-2 border-2 border-slate-900 rounded-md outline-none"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
