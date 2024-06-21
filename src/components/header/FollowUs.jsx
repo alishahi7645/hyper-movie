@@ -3,7 +3,9 @@ import React from 'react'
 function FollowUs() {
   return (
     <section className="container">
-        <div></div>
+        <div>
+            <span>FOLLOW US:</span>
+        </div>
     </section>
   )
 }
