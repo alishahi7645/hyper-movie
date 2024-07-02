@@ -6,8 +6,8 @@ import Slider from "./Slider";
 
 function Header() {
   return (
-    <header>
-      <div className="containe">
+    <header style={{backgroundImage: '/images/cinema.jpg'}}>
+      <div className="container">
         <Navigation />
         <Searchbox />
         <FollowUs />

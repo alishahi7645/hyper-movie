@@ -2,7 +2,7 @@ import React from "react";
 
 function Searchbox() {
   return (
-    <section className="container mt-12 text-slate-200">
+    <section className=" mt-12 text-slate-200">
       <div className="relative">
         <input
           type="text"

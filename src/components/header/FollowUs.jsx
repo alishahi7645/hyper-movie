@@ -2,7 +2,7 @@ import React from "react";
 
 function FollowUs() {
   return (
-    <section className="container flex justify-end mt-8 text-slate-200 text-xs">
+    <section className=" flex justify-end mt-8 text-slate-200 text-xs">
       <div className="flex items-center">
         <span>FOLLOW US:</span>
         <ul className="flex gap-4 ml-4">
