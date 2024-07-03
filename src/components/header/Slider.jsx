@@ -9,8 +9,22 @@ function Slider({setbg}) {
   return (
     <div className="mt-8 mb-12">
       <Swiper
+        breakpoints={{
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          }
+        }}
         spaceBetween={20}
-        slidesPerView={4}
+        slidesPerView={1}
         modules={[Autoplay]}
         autoplay={{delay: 2000}}
         loop
