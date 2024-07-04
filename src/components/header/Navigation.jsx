@@ -61,7 +61,7 @@ function Navigation() {
           </button>
         </div>
       </nav>
-        <div className={`bg-slate-900 text-center transition-all duration-300 overflow-hidden ${
+        <div className={`md:hidden bg-slate-900 text-center transition-all duration-300 overflow-hidden ${
           isOpenMenu ? "h-full py-4 border-t-2 border-slate-700" : "py-0 h-0 border-none"
         } `}
           style={{height: isOpenMenu ? 240 : 0}}
