@@ -3,7 +3,9 @@ import MoviesList from './MoviesList'
 
 function Main() {
   return (
-    <MoviesList/>
+    <main>
+        <MoviesList/>
+    </main>
   )
 }
 
