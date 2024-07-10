@@ -8,7 +8,7 @@ function MoviesCard({img}) {
         className="bg-cover"
         alt=""
       />
-      <div className="flex flex-col justify-end p-8 absolute bottom-0 w-full h-full bg-gradient-to-b from-[#0f172a12] to-[#0f172a81]">
+      <div className="flex flex-col justify-end p-8 absolute bottom-0 w-full h-full bg-gradient-to-b from-[#0f172a12] to-[#0f172a81] hover:from-[#0f172a49] hover:to-[#0f172ac3]">
         <h3>Die Hard</h3>
         <div className="flex gap-2 mt-">
           <span className="text-yellow-400">
