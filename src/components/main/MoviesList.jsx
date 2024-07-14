@@ -28,7 +28,16 @@ function MoviesList() {
         </div>
         <MovieListSlider movies={movies}/>
       </div>
-      
+      <div className="pt-8">
+        <div className="md:flex gap-8 items-center md:mb-4">
+          <h2 className="text-slate300 text-2xl">Free To Watch</h2>
+          <ul className="my-6 flex flex-col gap-2 md:flex-row">
+            <li className="text-yellow-200">#Movie</li>
+            <li>#Tv</li>
+          </ul>
+        </div>
+        <MovieListSlider movies={movies}/>
+      </div>
     </div>
   );
 }
