@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import MoviesCard from "../movies/MoviesCard";
 
 function Slider({setbg}) {
+
+  const [movies , setMovies] = useState([])
+
   function getImage(number){
     return `http://busterhtml.mbkip3ms9u-e92498n216kr.p.temp-site.link/images/uploads/slider${number}.jpg`
   }
