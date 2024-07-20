@@ -15,6 +15,18 @@ export const router = createBrowserRouter([
             {
                 path: '/movies',
                 element: <Movies/>
+            },
+            {
+                path: '/tv',
+                element: <h1>this is people page</h1>
+            },
+            {
+                path: '/people',
+                element: <h1>this is person page</h1>
+            },
+            {
+                path: '/more',
+                element: <h1>this is more page</h1>
             }
         ]
     }

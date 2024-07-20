@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Navigation() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -7,39 +8,41 @@ function Navigation() {
     <>
       <nav className="flex  items-center text-slate-300">
         <div className="flex items-center">
+          <Link to='/'>
           <h1 className="text-2xl mr-12 mt-3">
             Hyper<span className="text-rose-500">Movies</span>
             <p className="text-xs text-center text-slate-500 font-light">
               Film Review
             </p>
           </h1>
+          </Link>
           <ul className="hidden md:flex gap-6 uppercase">
             <li>
-              <a href="#">Movies</a>
+              <NavLink to='/movies' className='hover:text-white'>Movies</NavLink>
             </li>
             <li>
-              <a href="#">Tv Shows</a>
+              <NavLink to="/tv" className='hover:text-white'>Tv Shows</NavLink>
             </li>
             <li>
-              <a href="#">People</a>
+              <NavLink to="/people" className='hover:text-white'>People</NavLink>
             </li>
             <li>
-              <a href="#">More</a>
+              <NavLink to="/more" className='hover:text-white'>More</NavLink>
             </li>
           </ul>
         </div>
         <div className="ml-auto">
           <ul className="hidden md:flex gap-8 uppercase">
             <li>
-              <a href="#">Login</a>
+              <NavLink to="login">Login</NavLink>
             </li>
             <li>
-              <a
-                href="#"
+              <NavLink
+                to="signup"
                 className="bg-rose-700 px-4 py-2 rounded-2xl text-white"
               >
                 Sign up
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -68,22 +71,22 @@ function Navigation() {
         >
           <ul className="flex flex-col gap-4">
             <li>
-              <a href="#">MOVIES</a>
+              <NavLink to="/movies">MOVIES</NavLink>
             </li>
             <li>
-              <a href="#">TV SHOWS</a>
+              <NavLink to="/tv">TV SHOWS</NavLink>
             </li>
             <li>
-              <a href="#">PEOPLE</a>
+              <NavLink to="/people">PEOPLE</NavLink>
             </li>
             <li>
-              <a href="#">MORE</a>
+              <NavLink to="/more">MORE</NavLink>
             </li>
           </ul>
 
           <div className="mt-4 flex gap-4 justify-center items-center border-t-2 pt-4 border-slate-700">
-            <a href="#" className="text-lg">Login</a>
-            <a href="#" className="bg-rose-600 rounded-xl py-2 px-4">Sign up</a>
+            <NavLink to="/login" className="text-lg">Login</NavLink>
+            <NavLink to="/signup" className="bg-rose-600 rounded-xl py-2 px-4">Sign up</NavLink>
           </div>
         </div>
     </>
