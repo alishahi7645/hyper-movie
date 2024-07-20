@@ -1,6 +1,6 @@
 import React from "react";
 import MoviesCard from "../movies/MoviesCard";
-import MovieListSlider from "./MovieListSlider";
+import MovieListSlider from "../main/MovieListSlider";
 
 const movies = [
   'http://busterhtml.mbkip3ms9u-e92498n216kr.p.temp-site.link/images/uploads/slider1.jpg',
@@ -13,7 +13,7 @@ const movies = [
   'http://busterhtml.mbkip3ms9u-e92498n216kr.p.temp-site.link/images/uploads/slider2.jpg',
 ]
 
-function MoviesList() {
+function Home() {
   return (
     <div className="container">
       <div className="pt-8">
@@ -42,4 +42,4 @@ function MoviesList() {
   );
 }
 
-export default MoviesList;
+export default Home;
