@@ -1,40 +1,58 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+const menuItems = [
+  {
+    path: "/movies",
+    text: "movies",
+  },
+  {
+    path: "/tv",
+    text: "TV Shows",
+  },
+  {
+    path: "/people",
+    text: "people",
+  },
+  {
+    path: "/more",
+    text: "more",
+  },
+];
+
 function Navigation() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  console.log(isOpenMenu);
+
+  function activeClass({isActive}){
+    return isActive ? 'text-red-500' : 'hover:text-white' 
+  }
+
   return (
     <>
       <nav className="flex  items-center text-slate-300">
         <div className="flex items-center">
-          <Link to='/'>
-          <h1 className="text-2xl mr-12 mt-3">
-            Hyper<span className="text-rose-500">Movies</span>
-            <p className="text-xs text-center text-slate-500 font-light">
-              Film Review
-            </p>
-          </h1>
+          <Link to="/">
+            <h1 className="text-2xl mr-12 mt-3">
+              Hyper<span className="text-rose-500">Movies</span>
+              <p className="text-xs text-center text-slate-500 font-light">
+                Film Review
+              </p>
+            </h1>
           </Link>
           <ul className="hidden md:flex gap-6 uppercase">
-            <li>
-              <NavLink to='/movies' className='hover:text-white'>Movies</NavLink>
-            </li>
-            <li>
-              <NavLink to="/tv" className='hover:text-white'>Tv Shows</NavLink>
-            </li>
-            <li>
-              <NavLink to="/people" className='hover:text-white'>People</NavLink>
-            </li>
-            <li>
-              <NavLink to="/more" className='hover:text-white'>More</NavLink>
-            </li>
+            {menuItems.map((item) => (
+              <li key={item.path}>
+                <NavLink to={item.path} className={activeClass}>
+                  {item.text}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="ml-auto">
           <ul className="hidden md:flex gap-8 uppercase">
             <li>
-              <NavLink to="login">Login</NavLink>
+              <NavLink className={activeClass} to="login">Login</NavLink>
             </li>
             <li>
               <NavLink
@@ -64,31 +82,33 @@ function Navigation() {
           </button>
         </div>
       </nav>
-        <div className={`md:hidden bg-slate-900 text-center transition-all duration-300 overflow-hidden ${
-          isOpenMenu ? "h-full py-4 border-t-2 border-slate-700" : "py-0 h-0 border-none"
+      <div
+        className={`md:hidden bg-slate-900 text-center transition-all duration-300 overflow-hidden ${
+          isOpenMenu
+            ? "h-full py-4 border-t-2 border-slate-700"
+            : "py-0 h-0 border-none"
         } `}
-          style={{height: isOpenMenu ? 240 : 0}}
-        >
-          <ul className="flex flex-col gap-4">
-            <li>
-              <NavLink to="/movies">MOVIES</NavLink>
+        style={{ height: isOpenMenu ? 240 : 0 }}
+      >
+        <ul className="flex flex-col gap-4">
+          {menuItems.map((item) => (
+            <li key={item.path}>
+              <NavLink to={item.path} className={activeClass} onClick={() => setIsOpenMenu(false)} >
+                {item.text}
+              </NavLink>
             </li>
-            <li>
-              <NavLink to="/tv">TV SHOWS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/people">PEOPLE</NavLink>
-            </li>
-            <li>
-              <NavLink to="/more">MORE</NavLink>
-            </li>
-          </ul>
+          ))}
+        </ul>
 
-          <div className="mt-4 flex gap-4 justify-center items-center border-t-2 pt-4 border-slate-700">
-            <NavLink to="/login" className="text-lg">Login</NavLink>
-            <NavLink to="/signup" className="bg-rose-600 rounded-xl py-2 px-4">Sign up</NavLink>
-          </div>
+        <div className="mt-4 flex gap-4 justify-center items-center border-t-2 pt-4 border-slate-700">
+          <NavLink to="/login" className="text-lg">
+            Login
+          </NavLink>
+          <NavLink to="/signup" className="bg-rose-600 rounded-xl py-2 px-4">
+            Sign up
+          </NavLink>
         </div>
+      </div>
     </>
   );
 }
