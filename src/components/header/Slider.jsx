@@ -48,7 +48,7 @@ function Slider({setbg}) {
           movies.map((movie) => (
             <SwiperSlide key={movie.id}>
               <div  onMouseOver={(e) => setbg(`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`)}>
-                <MoviesCard title={movie.title} rate={movie.vote_average} img={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}/>
+                <MoviesCard movie={movie} title={movie.title} rate={movie.vote_average} img={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}/>
               </div>
             </SwiperSlide>
           ))
